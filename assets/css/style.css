@@ -1,0 +1,50 @@
+body
+{
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+
+
+nav {
+    color: teal;
+    font-size: 46px;
+    text-align: center;
+}
+
+
+
+#search-section {
+    background-color: rgb(240, 252, 252);
+}
+
+
+
+.city {
+    border: none;
+}
+
+.card-city {
+    border: none;
+}
+
+
+
+.cbforecast {
+    margin: 20px;
+}
+
+
+.main-container {
+    padding-bottom: 20px;
+}
+
+.row-blue {
+    background-color:rgb(240, 252, 252);
+}
+
+
+
+
+

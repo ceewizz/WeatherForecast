@@ -1,5 +1,5 @@
 // Creating a variable to store the API key
-var APIKey = '&appid=ba677ba6b0fe99ce4868843dff5b5299';
+var APIKey = "ba677ba6b0fe99ce4868843dff5b5299";
 
 // DOM Elements
 var inputEl = document.querySelector('.input');
@@ -25,10 +25,10 @@ for (var i = 0; i < localStorage.length; i++) {
 
 
 // Constructing a Query URL to make the API call
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + '&units=imperial' + APIKey;
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 // 5-days forecast parameters
-var URLForecast = "https://api.openweathermap.org/data/2.5/weather?q=" + city + '&units=imperial' + APIKey;
+var URLForecast = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 
 

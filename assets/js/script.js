@@ -1,5 +1,5 @@
 // Creating a variable to store the API key
-var APIKey = "ba677ba6b0fe99ce4868843dff5b5299";
+var APIKey = '&appidba677ba6b0fe99ce4868843dff5b5299';
 
 // DOM Elements
 var inputEl = document.querySelector('.input');
@@ -9,12 +9,21 @@ var cityListEl = document.querySelector('.city-list');
 
 
 // Creating a variable to store user's input for city and saving it to local storage
-var city;
-city = localStorage.getItem('cityStorage');
+var city = localStorage.getItem('cityStorage');
+
 
 // Setting input value to local storage
 
-function queryData() {
+// Constructing a Query URL to make the API call
+var URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + '&units=imperial' + APIKey;
+
+// URL for 5-days forecast parameters (city name + weather units of measurements)
+var URLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + '&units=imperial' + APIKey;
+
+
+// Setting input value to local storage
+
+function recordCityData() {
     localStorage.setItem('cityStorage', inputEl.value);
 }
 
@@ -24,17 +33,14 @@ for (var i = 0; i < localStorage.length; i++) {
 }
 
 
-// Constructing a Query URL to make the API call
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-// 5-days forecast parameters
-var URLForecast = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 
 
 // Making the API call using fetch request
-
-fetch(queryURL)
+$.ajax ({
+    url: queryURL,
+    method: "GET"
+})
 .then(function (response) {
 
 // Adding weather info to the page
@@ -52,8 +58,14 @@ var long = response.coord.lon;
 var queryURLUv = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&long=" + long + APIKey;
 
 // Making the API call of the Uv index
-fetch(queryURLUv)
+$.ajax ({
+    url : URLForecast,
+    method : "GET"
+})
+
+
 .then(function (response) {
+    url = U
     var uvValue = response.value
 
     // Add UV index to page
@@ -134,5 +146,5 @@ function uvColor(uvValue, colorbgd) {
         });
     
     // Event Listener for search button
-    searchBtnEl.addEventListener('click', queryData);
+    searchBtnEl.addEventListener('click', recordCityData);
     

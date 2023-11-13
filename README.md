@@ -28,4 +28,5 @@ User can look at their current city weather forecast and also be presented with 
 - Screenshots of project will be included in the image folder.
 
 - Link to Project Repo: https://github.com/ceewizz/WeatherForecast
+- Link to Deployed App: https://ceewizz.github.io/WeatherForecast
 

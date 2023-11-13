@@ -1,5 +1,5 @@
 // Creating a variable to store the API key
-var apiKey = '&appid=68a2a2f3f0cbb0a8436b99943002fd55';
+var apiKey = '&appid=c974392a54c31d140036260bfd2c80a0';
 
 
 // DOM Elements

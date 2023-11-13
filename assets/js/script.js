@@ -18,7 +18,7 @@ var cityName = localStorage.getItem('cityStorage');
 
 // Constructing a Query URL to make the API call
 var URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + '&units=imperial' + apiKey;
-// URL for 5-days forecast parameters (city name + weather units of measurements)
+// Url of 5 days forecast
 var URLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + '&units=imperial' + apiKey;
 
 // Setting input value to local storage
@@ -68,7 +68,7 @@ $.ajax ({
     
     var uvValue = response.value
 
-    // Add UV index to page
+    // Adding UV index to page
 
     $('.uv').text("UV Index: " + response.value);
     $('.uv').css("background-color", uvColor(uvValue));
